@@ -1,0 +1,725 @@
+{
+  "info": {
+    "_postman_id": "269d9f06-21f2-4a31-ad0a-2e2bdcd476af",
+    "name": "theatre-test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55833226"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Google Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"credential\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IjdiMDIxNjcxZWRlOTBlZTVhMzc1YzAyMmE1MjNkNDkwMTgxYTJjOWQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyNDU0MTY0NzQ1MjctMmNpa2lhc2gzbjU0ZDI1dDBqNWZ0dHFnb2ZmcjgyMGouYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyNDU0MTY0NzQ1MjctMmNpa2lhc2gzbjU0ZDI1dDBqNWZ0dHFnb2ZmcjgyMGouYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTc3NTM5ODI0MDgyMDM0MTY1OTMiLCJlbWFpbCI6InRodW5yb29jQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3ODEyMDYzODEsIm5hbWUiOiJUaHVuIFdpdHlha29uIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0w0cE5lSGNQajAyQjBlRGxQTWdPcUhyNnRQdy1TbWlKX1B5dEpucnZFMXlYeHRPQT1zOTYtYyIsImdpdmVuX25hbWUiOiJUaHVuIiwiZmFtaWx5X25hbWUiOiJXaXR5YWtvbiIsImlhdCI6MTc4MTIwNjY4MSwiZXhwIjoxNzgxMjEwMjgxLCJqdGkiOiIxZmRhMGJkMjQzYWU4OWVlZmFlNjFkZDFlNTk0OWQyOGE2ZjMyMjY4In0.CeLuVQD5E2Dy7dof4gWRFiLob7LfA_X1dFnHWmNpHxbt5rEaxnWt_VM0H0raBcBDca2DUUhykgalio44tVgkfDsMetKLCigDjhg_j3ZPXg5mmkiZTQG4pU6ueK12T8zpibKF8EXt-oKc8vNJuJgqKQB5rudiJs1v3Jpn2lr-Y2xe-PKM4nOqUJ4flvOucqu8Qx4lSq7nn9smuuAVRYG1X2uQMxcj2T6ErAbsvR2IiDojesY-6ZhJgpCB_xvzKs7KCYwmXO_obTycOZXhXj698AVT3MvJ-oN_J8YA-kMjlIAA82Xk4Cfwpc4CWnc-LRjTYB9iSqsVt67golCc9Pgv8A\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{path}}/api/auth/google",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "google"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin login(Mock)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{path}}/api/auth/admin",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Seat",
+      "item": [
+        {
+          "name": "Get all seats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/seats",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "seats"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get one seat",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/seats/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "seats",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2db17105435aff95f71e6e"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create seat",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"theater_id\": \"6a2be58fe1dc91afa41e6302\",\r\n    \"row\": 1,\r\n    \"number\": 1,\r\n    \"avalible\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{path}}/api/seats",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "seats"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update seat",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"theater_id\": \"6a2be58fe1dc91afa41e6302\",\r\n    \"row\": 1,\r\n    \"number\": 1,\r\n    \"avalible\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{path}}/api/seats/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "seats",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2be58fe1dc91afa41e6303"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete seat",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/seats/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "seats",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2be58fe1dc91afa41e6303"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get seat by theatre id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/seats/theatre/:theatreId",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "seats",
+                "theatre",
+                ":theatreId"
+              ],
+              "variable": [
+                {
+                  "key": "theatreId",
+                  "value": "6a2db17105435aff95f71e6b"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get seats by is booked",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/seats/booked",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "seats",
+                "booked"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Seat booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/seats/booked/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "seats",
+                "booked",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2db17105435aff95f71e6d"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update hold seat",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/seats/hold/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "seats",
+                "hold",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2db17105435aff95f71e6d"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get seats for user is holded and is booked",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/seats/user-booked?keyword=",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "seats",
+                "user-booked"
+              ],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Theatre",
+      "item": [
+        {
+          "name": "Get all theatres",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/theatres",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "theatres"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get one theatre",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/theatres/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "theatres",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2be432e7d4c616a29f9b98"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create theatre",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"movie_id\": \"6a2be15eb57b96bf6536cb4e\",\r\n    \"theatre_name\": \"4DX Theatre\",\r\n    \"rows\": 5,\r\n    \"seats_per_row\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{path}}/api/theatres",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "theatres"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update theatre",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"movie_id\": \"6a2be2662c1d1938ff65ca51\",\r\n    \"theatre_name\": \"Theatre1\",\r\n    \"rows\": 2,\r\n    \"seats_per_row\": 2,\r\n    \"total_seats\": 4,\r\n    \"available_seats\": 4\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{path}}/api/theatres/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "theatres",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2be432e7d4c616a29f9b98"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete theatre",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/theatres/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "theatres",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2be432e7d4c616a29f9b98"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Movie",
+      "item": [
+        {
+          "name": "Get movies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/movies",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "movies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get one movie",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/movies/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "movies",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2be147b57b96bf6536cb4d"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create movie",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Godzilla\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{path}}/api/movies",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "movies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update movie",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Godzilla\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{path}}/api/movies/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "movies",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2be2662c1d1938ff65ca51"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete movie",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/movies/:id",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "movies",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a2be220b57b96bf6536cb50"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Get all user",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/users",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{path}}/api/users/profile",
+              "host": [
+                "{{path}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "path",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
