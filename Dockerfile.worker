@@ -1,0 +1,18 @@
+FROM golang:1.26.4 AS builder
+
+WORKDIR /app
+
+COPY go.mod go.sum ./
+RUN go mod download
+
+COPY . .
+
+RUN go build -o worker ./worker
+
+FROM debian:bookworm-slim
+
+WORKDIR /app
+
+COPY --from=builder /app/worker .
+
+CMD ["./worker"]
